@@ -21,10 +21,11 @@ export const findUserById = (userId) => model.findById(userId);
 export const findUserByUsername = (username) =>
   model.findOne({ username: username });
 
-export const findUserByCredentials = (suername, password) =>
+export const findUserByCredentials = (username, password) =>
   model.findOne({ username, password });
 
-export const updateUser = (userId, user) =>
-  model.updateOne({ _id: userId }, { $set: user });
+export const updateUser = async (userId, user) => {
+  await model.updateOne({ _id: userId }, { $set: user });
+};
 
 export const deleteUser = (userId) => model.deleteOne({ _id: userId });
