@@ -2,18 +2,15 @@ import mongoose from "mongoose";
 
 const questionSchema = new mongoose.Schema(
   {
-    quizId: ObjectId, // Reference to the quiz
-    questionType: String, // "Multiple Choice", "True/False", "Fill in the Blank"
+    quizId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "quizModel",
+    },
+    questionType: String,
     questionText: String,
     points: Number,
-    choices: [
-      // Only for Multiple Choice
-      {
-        text: String,
-        isCorrect: Boolean,
-      },
-    ],
-    correctAnswers: [String], // For "Fill in the Blank", a list of acceptable answers
+    choices: [String],
+    correctAnswer: String,
   },
   { collection: "questions" }
 );

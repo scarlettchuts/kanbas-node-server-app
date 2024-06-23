@@ -15,6 +15,9 @@ import UserRoutes from "./Kanbas/Users/routes.js";
 import session from "express-session";
 import "dotenv/config";
 import EnrollmentRoutes from "./Kanbas/Enrollments/routes.js";
+import QuizRoutes from "./Kanbas/Quizzes/routes.js";
+import QuestionRoutes from "./Kanbas/Questions/routes.js";
+import StudentQuizRecordsRoutes from "./Kanbas/StudentQuizRecords/routes.js";
 
 const CONNECTION_STRING =
   process.env.MONGO_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kanbas-su1";
@@ -51,6 +54,9 @@ AssignmentRoutes(app);
 ModuleRoutes(app);
 CourseRoutes(app);
 EnrollmentRoutes(app);
+QuizRoutes(app);
+QuestionRoutes(app);
+StudentQuizRecordsRoutes(app);
 Lab5(app);
 Hello(app);
 PathParameters(app);
