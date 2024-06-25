@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const quizSchema = new mongoose.Schema(
   {
     title: String,
+    description: String,
     courseId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "CourseModel",
@@ -28,8 +29,8 @@ const quizSchema = new mongoose.Schema(
       default: "Yes",
     },
     timeLimit: {
-      type: String,
-      default: "20 Minutes",
+      type: Number,
+      default: 20,
     },
     multipleAttempts: {
       type: Boolean,
