@@ -63,6 +63,10 @@ const quizSchema = new mongoose.Schema(
     for: String,
     availableDate: Date,
     untilDate: Date,
+    isPublished: {
+      type: Boolean,
+      default: false,
+    },
   },
   { collection: "quizzes" }
 );
