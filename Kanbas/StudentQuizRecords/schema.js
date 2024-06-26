@@ -24,6 +24,7 @@ const studentQuizRecordSchema = new mongoose.Schema(
         },
         studentAnswer: String,
         isCorrect: Boolean,
+        _id: false,
       },
     ],
     score: Number,

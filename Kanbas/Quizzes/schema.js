@@ -26,7 +26,7 @@ const quizSchema = new mongoose.Schema(
     },
     shuffleAnswers: {
       type: Boolean,
-      default: "Yes",
+      default: true,
     },
     timeLimit: {
       type: Number,
@@ -34,7 +34,7 @@ const quizSchema = new mongoose.Schema(
     },
     multipleAttempts: {
       type: Boolean,
-      default: "No",
+      default: false,
     },
     howManyAttempts: {
       type: Number,
@@ -48,17 +48,17 @@ const quizSchema = new mongoose.Schema(
     },
     oneQuestionAtATime: {
       type: Boolean,
-      default: "Yes",
+      default: true,
     },
     requireRespondusLockDownBrower: Boolean,
     requiredToViewQuizResults: Boolean,
     webcamRequired: {
       type: Boolean,
-      default: "No",
+      default: false,
     },
     lockQuestionsAfterAnswering: {
       type: Boolean,
-      default: "No",
+      default: false,
     },
     dueDate: Date,
     for: String,

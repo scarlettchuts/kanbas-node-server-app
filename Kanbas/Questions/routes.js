@@ -8,9 +8,7 @@ import {
 export default function QuestionRoutes(app) {
   app.get("/api/quizzes/:quizid/questions", async (req, res) => {
     const { quizid } = req.params;
-    console.log(quizid);
     const questions = await findQuestionForQuiz(quizid);
-    console.log(questions);
     res.json(questions);
   });
 
@@ -20,7 +18,7 @@ export default function QuestionRoutes(app) {
     const newQuestion = {
       ...req.body,
       course: cid,
-      quiz: quizid,
+      quizId: quizid,
     };
 
     const question = await createQuestion(newQuestion);
@@ -33,8 +31,8 @@ export default function QuestionRoutes(app) {
     res.json(status);
   });
 
-  app.delete("api/quizzes/:quizid/questions/:questionid", async (req, res) => {
-    const status = await deleteQuestion(req.params.quizid);
+  app.delete("/api/quizzes/:quizid/questions/:questionid", async (req, res) => {
+    const status = await deleteQuestion(req.params.questionid);
     res.json(status);
   });
 }

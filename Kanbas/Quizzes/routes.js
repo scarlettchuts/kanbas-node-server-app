@@ -14,10 +14,10 @@ export default function QuizRoutes(app) {
 
   app.post("/api/courses/:cid/quizzes", async (req, res) => {
     const { cid } = req.params;
-
     const newQuiz = {
       ...req.body,
-      course: cid,
+      // course: cid,
+      courseId: cid,
     };
 
     const quiz = await createQuiz(newQuiz);
@@ -30,7 +30,7 @@ export default function QuizRoutes(app) {
     res.json(status);
   });
 
-  app.delete("api/quizzes/:quizid", async (req, res) => {
+  app.delete("/api/quizzes/:quizid", async (req, res) => {
     const status = await deleteQuiz(req.params.quizid);
     res.json(status);
   });
