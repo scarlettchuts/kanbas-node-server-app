@@ -2,7 +2,7 @@ import studentQuizRecordModel from "./model.js";
 
 export const findStudentQuizRecordByStudent = (studentId, quizId) => {
   return studentQuizRecordModel
-    .find({
+    .findOne({
       studentId: studentId,
       quizId: quizId,
     })

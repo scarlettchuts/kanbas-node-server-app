@@ -64,6 +64,13 @@ const quizSchema = new mongoose.Schema(
     for: String,
     availableDate: Date,
     untilDate: Date,
+    questionIds: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "QuestionModel",
+        _id: false,
+      },
+    ],
     isPublished: {
       type: Boolean,
       default: false,
